@@ -1,12 +1,5 @@
-import kotlin.io.path.Path
-import kotlin.io.path.readLines
-
 fun main() {
-    val lines = Path(
-        object {}.javaClass.getResource(
-            "01_input"
-        )?.file ?: error("Cant find file")
-    ).readLines()
+    val lines = readLines("01_input")
 
     // Task 1
     val sum1 = lines.sumOf { line ->

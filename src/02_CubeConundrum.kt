@@ -27,4 +27,11 @@ fun main() {
     }.sumOf { it.id }
     println(sum1)
 
+    // Task 2
+    val colors = games.flatMap { it.sets.flatMap { it.keys } }.toSet()
+    val sum2 = games.map { it.sets }
+        .sumOf { sets ->
+            colors.map { color -> sets.maxOfOrNull { it[color] ?: 0 } ?: 0 }.fold(1, Int::times)
+        }
+    println(sum2)
 }

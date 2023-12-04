@@ -43,7 +43,6 @@ fun main() {
     numbers.forEach { (row, col1, col2, number) ->
         starsPerRow.slice(max(0, row - 1)..min(symbolPerRow.lastIndex, row + 1))
             .flatten()
-            .toList()
             .forEach { star ->
                 if (star.second in (col1 - 1)..(col2 + 1)) {
                     starsAdjacency[star]!!.add(number)
